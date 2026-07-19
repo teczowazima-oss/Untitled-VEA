@@ -1,5 +1,7 @@
 a weird game with horror elements that likes mocking you
 
+ex: you playing this game says a lot. either you know me which is a bad choice, or you scrolled through the whole github. go touch grass
+
 trigger warnings: mentions of blood, mocking, dark humour, no logic, death, language
 features: many paths
 plans for the future: ten days
