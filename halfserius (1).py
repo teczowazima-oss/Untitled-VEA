@@ -4,7 +4,19 @@ yellow = 0
 hunger = 0
 health = 100
 day = 1
+monstercare = 0
 # purple is enasni, green is lamron, yellow is bmud 
+def day5():
+    global purple
+    global green
+    global yellow
+    global hunger
+    global health
+    global day
+    global monstercare
+    print("Day 5... Congrats on getting through yesterday. I'm guessing it's not your first attempt. It got pretty dark, didn't it? Well. Since no one wanted more days, I'll make them.")
+    # This one will make you feel weird because it will be super goofy! So you will feel like something bad's gonna come!")
+    print("You are at your house. Or something similiar to it. Anyway, you're in a place very similiar to your house.")
 def day4():
     global purple
     global green
@@ -12,11 +24,13 @@ def day4():
     global hunger
     global health
     global day
+    global monstercare
     print("It's day 4. You woke up back at your house. You probably sleepwalked.")
-    if purple < 6:
+    if purple < 5:
         print("The monsters are upset with you.")
         choice6 = input("{RUN}\t{STAY}\t{COME AT THEM}\n")
         if choice6 == "RUN":
+            green += 2
             print("The doors and windows are stuck. The chimney too. Except you don't have a chimney. All of it's covered in something black.")
             if yellow > 3:
                 print("It seems sticky. Touch it?")
@@ -26,19 +40,73 @@ def day4():
                     yellow += 2
                     day += 1
                 elif touch1 == "no":
-                    print("Probably a good idea...")
-                    green += 3
-    elif purple > 6:
+                    print("Probably a good idea... You sit there. Just... sit. You dont get food and eventually dont wanna do anything. You become the next meal.\nENDING: EATEN c")
+                    exit()
+            else:
+                print("You realise it's not your house. It's really weird. It looks like it's trying to mimic it.\nDid the monsters... Kidnap you? They explain it's a parallel universe they made for you. You realise you can't run away. Do you befriend the monsters or deny them?\n")
+                denyfriend1 = input("{Befriend}\t{Deny}\n")
+                if denyfriend1 == "Befriend":
+                    print("The monsters tell you to cut this crap. When they kidnapped you you're suddenly a friend, huh? Not believable. You become their toy.\nENDING: TOYED")
+                    exit()
+                elif denyfriend1 == "Deny":
+                    print("The monsters thought about this, but still were a little surprised. You showed you stand your ground and don't change just to save yourself. They say they will let you go tomorrow.")
+                    day += 1
+        elif choice6 == "STAY":
+            print("The monsters... did not expect this. They don't accept you. You hear whispers everywhere.\nYou find a small opening in the black thing.")
+            runstay1 = input("{Run}\t{Stay}\n")
+            if runstay1 == "Run":
+                print("You try to. You get stuck. You get closed in a cocoon.\nENDING: HYBERNATING a")
+                exit()
+            elif runstay1 == "Stay":
+                print("You fall asleep. You don't wake up, consumed by the black ooze.\nENDING: HYBERNATING b")
+        elif choice6 == "COME AT THEM":
+            yellow += 2
+            print("You do a wimpy slap. The monsters look shocked and laugh. They decide you're funny.\nThey like you. So they won't let you leave...")
+            day += 1
+
+    elif purple >= 8:
         print("The monsters greeted you happily. Your house feels... different, though. You try to open the door, but it's blocked by the monsters' ooze.\nThe monsters come up to you and say you're too fun to let out.")
         mtu1 = input("{PANIC}\t{society is worse}\n")
         if mtu1 == "PANIC":
             print("Party pooper. The monsters felt decieved and used you as a prop in their escape room. So tragic, you can't warn anyone anymore...\nENDING: PROPPED")
             exit()
         elif mtu1 == "society is worse":
-            print("You decided being here with the monsters is better than living like a normal person.\nDays pass and you fall deeper into insanity. The monsters start getting concerned and let you out to seek help.")
-            
+            print("You decided being here with the monsters is better than living like a normal person.\nDays pass and you fall deeper into insanity. The monsters start getting concerned and let you out to seek help.\nThere you are again, on the street, because your besties kicked you out. How could they?! You did EVERYTHING to be friends, you were cool, you were fun, you killed too... AND NOW THEY KICK YOU OUT?!\n")
+            choice8 = input("{Be upset}\t{Understand}")
+            if choice8 == "Be upset":
+                purple += 10
+                print("YES! HOW CAN THEY?! YOU FED THEM FOR MONTHS, YOU CARED! AND THEY?! YOU DECIDE THIS DEMANDS BLOOD. THEY LEFT YOU. YOU WILL GET REVENGE. YOU GATHER WEAPONS, KILL TO GET THEM, AND FINALLY GET TO YOUR HOUSE. YOU SHOOT THE GUNS. YOU BREAK EVERYTHING.\nBut... they caught you. They push you to the ground and take your hard earned toys. They tell you to calm down.\nYOU DON'T. YOU CAN'T. YOU STRUGGLE AGAINST THEIR GRIP. FINALLY, THE POLICE COME. YOU SCREAM YOUR HEART OUT. THE POLICE INVESTIGATE YOU AND TAKE YOU AWAY. EVERYTHING AFTER THAT IS LIKE... a fever dream. You don't know whats right or wrong, who cares?\nYou take evry opportunity to go crazy. They close you in an asylum.")
+                print("One day, you start spiraling. What did you do... You broke everything, no wonder they hate you. ENDING: very dark turn that i need to mark")
+                exit()
+            elif choice8 == "Understand":
+                print("No... They care. You're the bad one here. You would go get help, but it's too expensive... You try to think more... normally. And calling them monsters seems bad now. They're friends, but you're not one of them. You are a human that should take killing and cannibalism as a bad thing. But... Does that make your friends bad? They cared about you. But humanity sees them as bad.\nWho should you believe...\n")
+                choice9 = input("{humans?}\t{friends?}\n")
+                if choice9 == "humans?":
+                    print("You're human. You should believe humans. You go to the police station to explain the situation. Turns out there is free help. One day, after going to therapy for a long time, you see one of your friends carrying groceries. The not human friends. You got your life together, they said.\n")
+                    #Should i end here, future me?
+                    print("\nENDING: THERAPY IS WORTH IT!")
+                    exit()
+                elif choice9 == "friends?":
+                    print("They are the ones that helped you. You go over to your house, and say what you feel. They show you something. They started eating apples! That's partly the reason your groceries went missing a lot, but they were working to become more human. You realise how ironic this is - You became a monster, they became a human. You decide to meet halfway.")
+                    #Idunno howto continue
+                    print("ENDING: &6#^%#!:)")
+                    exit()
     else:
         print("How the hell did you get here... The monsters are neutral with you. They let you go or stay.")
+        staygo1 = input("{Stay}\t{Go}\n")
+        if staygo1 == "Stay":
+            print("You decided staying with the monsters is cool. You live like them, with them, and slowly start feeling as one of them.\n")
+            if green > 4 and yellow < 6
+                print("You feel weird about it. You fall into anxiety, jumping at every whisper. You don't feel good about this.")
+                print("You tell that to the monster therapist and they say you can go away if you feel so bad. They won't chase you.")
+                print("They treat you as their equal. That means you deserve freedom.")
+                staygo2 = input ("{Stay}\t{Go}\n")
+                if staygo2 == "Stay":
+                    print("Your anxiety gets bigger and bigger, followed by an existential crisis. Are you human? Monster? Dead? Fake?\nHard to tell. They start noticing. They are worried.")
+                    day += 1
+            else:
+                print("You like living like this. You feel at home. You slowly see your body becoming like the monsters'. It's good. After months, you are oficially one of them! You realise your family isn't as bad as humanity says.\nThey don't kill to kill. That's their way to eat. Being scary, psychotic... That's a habit around humans. Humans are actually wore than them. Not from your perspective.\nYour family isn't toxic. They tolerate every gender, every hobby, don't have the internet.\nENDING: ONE OF THEM (sane)")
+                exit()
 
 def day3():
     global purple
@@ -47,6 +115,7 @@ def day3():
     global hunger
     global health
     global day
+    global monstercare
     print("You had a dream today. You don't remember it though.\nYour room stinks of blood. You decide to check...")
     choice4 = input("{the wardrobe}\t{under the bed}\t{HELL NAH}\n")
     if choice4 == "the wardrobe":
@@ -116,6 +185,7 @@ def day2():
     global hunger
     global health
     global day
+    global monstercare
     print("The first day passes.\nYou wake up to the familiar feeling of being broke.\nYou have to go shopping today.\n")
     choice2 = input("{go shopping}\t{starve}\t{steal food}\n")
     if choice2 == "go shopping":
@@ -236,5 +306,9 @@ while True:
 while True:
     if day == 4:
         day4()
+        break
+while True:
+    if day == 5:
+        day5()
         break
 #
