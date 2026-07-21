@@ -5,7 +5,7 @@ hunger = 0
 health = 100
 day = 1
 monstercare = 0
-# purple is enasni, green is lamron, yellow is bmud 
+# purple is enasni, green is lamron, yellow is bmud
 def day5():
     global purple
     global green
@@ -17,6 +17,16 @@ def day5():
     print("Day 5... Congrats on getting through yesterday. I'm guessing it's not your first attempt. It got pretty dark, didn't it? Well. Since no one wanted more days, I'll make them.")
     # This one will make you feel weird because it will be super goofy! So you will feel like something bad's gonna come!")
     print("You are at your house. Or something similiar to it. Anyway, you're in a place very similiar to your house.")
+    if monstercare == 1:
+        print("The monsters are neutral. They will let you choose whether you go or stay.")
+    elif monstercare == 0:
+        print("The monsters want you gone or dead.")
+    elif monstercare == 2:
+        print("The monsters want you here forever. You're too important to let out! You are funny, cool, and their bestie! The outside is too dangerous.")
+    elif monstercare == 3 or (green > 3 and purple < 7):
+        print("'You should go... We want you to feel good.' The monsters look genuinely concerned. It's the first time they spoke like a human. I think they're trying to be as human as they can for you.")
+    elif monstercare == 4 or purple > 7:
+        print("Your friends care. They will let you go, but won't force you to do anything. You're one of them.")
 def day4():
     global purple
     global green
@@ -39,6 +49,7 @@ def day4():
                     print("You got stuck in it. You managed to get out, but it took the whole day.")
                     yellow += 2
                     day += 1
+                    monstercare = 0
                 elif touch1 == "no":
                     print("Probably a good idea... You sit there. Just... sit. You dont get food and eventually dont wanna do anything. You become the next meal.\nENDING: EATEN c")
                     exit()
@@ -63,6 +74,7 @@ def day4():
             yellow += 2
             print("You do a wimpy slap. The monsters look shocked and laugh. They decide you're funny.\nThey like you. So they won't let you leave...")
             day += 1
+            monstercare = 2
 
     elif purple >= 8:
         print("The monsters greeted you happily. Your house feels... different, though. You try to open the door, but it's blocked by the monsters' ooze.\nThe monsters come up to you and say you're too fun to let out.")
@@ -72,11 +84,11 @@ def day4():
             exit()
         elif mtu1 == "society is worse":
             print("You decided being here with the monsters is better than living like a normal person.\nDays pass and you fall deeper into insanity. The monsters start getting concerned and let you out to seek help.\nThere you are again, on the street, because your besties kicked you out. How could they?! You did EVERYTHING to be friends, you were cool, you were fun, you killed too... AND NOW THEY KICK YOU OUT?!\n")
-            choice8 = input("{Be upset}\t{Understand}")
+            choice8 = input("{Be upset}\t{Understand}\n")
             if choice8 == "Be upset":
                 purple += 10
                 print("YES! HOW CAN THEY?! YOU FED THEM FOR MONTHS, YOU CARED! AND THEY?! YOU DECIDE THIS DEMANDS BLOOD. THEY LEFT YOU. YOU WILL GET REVENGE. YOU GATHER WEAPONS, KILL TO GET THEM, AND FINALLY GET TO YOUR HOUSE. YOU SHOOT THE GUNS. YOU BREAK EVERYTHING.\nBut... they caught you. They push you to the ground and take your hard earned toys. They tell you to calm down.\nYOU DON'T. YOU CAN'T. YOU STRUGGLE AGAINST THEIR GRIP. FINALLY, THE POLICE COME. YOU SCREAM YOUR HEART OUT. THE POLICE INVESTIGATE YOU AND TAKE YOU AWAY. EVERYTHING AFTER THAT IS LIKE... a fever dream. You don't know whats right or wrong, who cares?\nYou take evry opportunity to go crazy. They close you in an asylum.")
-                print("One day, you start spiraling. What did you do... You broke everything, no wonder they hate you. ENDING: very dark turn that i need to mark")
+                print("One day, you start spiraling. What did you do... You broke everything, no wonder they hate you. ENDING: very dark turn that i need to mark in the trigger warnings")
                 exit()
             elif choice8 == "Understand":
                 print("No... They care. You're the bad one here. You would go get help, but it's too expensive... You try to think more... normally. And calling them monsters seems bad now. They're friends, but you're not one of them. You are a human that should take killing and cannibalism as a bad thing. But... Does that make your friends bad? They cared about you. But humanity sees them as bad.\nWho should you believe...\n")
@@ -88,15 +100,15 @@ def day4():
                     exit()
                 elif choice9 == "friends?":
                     print("They are the ones that helped you. You go over to your house, and say what you feel. They show you something. They started eating apples! That's partly the reason your groceries went missing a lot, but they were working to become more human. You realise how ironic this is - You became a monster, they became a human. You decide to meet halfway.")
+                    monstercare = 4
                     #Idunno howto continue
-                    print("ENDING: &6#^%#!:)")
-                    exit()
+                    print("They encourage you to go to a human therapist. But... You don't want to yet.")
     else:
         print("How the hell did you get here... The monsters are neutral with you. They let you go or stay.")
         staygo1 = input("{Stay}\t{Go}\n")
         if staygo1 == "Stay":
             print("You decided staying with the monsters is cool. You live like them, with them, and slowly start feeling as one of them.\n")
-            if green > 4 and yellow < 6
+            if green > 4 and yellow < 6:
                 print("You feel weird about it. You fall into anxiety, jumping at every whisper. You don't feel good about this.")
                 print("You tell that to the monster therapist and they say you can go away if you feel so bad. They won't chase you.")
                 print("They treat you as their equal. That means you deserve freedom.")
@@ -104,8 +116,9 @@ def day4():
                 if staygo2 == "Stay":
                     print("Your anxiety gets bigger and bigger, followed by an existential crisis. Are you human? Monster? Dead? Fake?\nHard to tell. They start noticing. They are worried.")
                     day += 1
+                    monstercare = 3
             else:
-                print("You like living like this. You feel at home. You slowly see your body becoming like the monsters'. It's good. After months, you are oficially one of them! You realise your family isn't as bad as humanity says.\nThey don't kill to kill. That's their way to eat. Being scary, psychotic... That's a habit around humans. Humans are actually wore than them. Not from your perspective.\nYour family isn't toxic. They tolerate every gender, every hobby, don't have the internet.\nENDING: ONE OF THEM (sane)")
+                print("You like living like this. You feel at home. You slowly see your body becoming like the monsters'. It's good. After months, you are officialy one of them! You realise your family isn't as bad as humanity says.\nThey don't kill to kill. That's their way to eat. Being scary, psychotic... That's a habit around humans. Humans are actually worse than them. Not from your perspective.\nYour family isn't toxic. They tolerate every gender, every hobby, don't have the internet.\nENDING: ONE OF THEM (sane)")
                 exit()
 
 def day3():
@@ -161,6 +174,7 @@ def day3():
             green += 4
         elif runaway1 == "to a friend's house":
             print("Very funny. Maybe the imaginary one. You lay on the street.")
+            yellow += 2
             day += 1
             hunger += 10
             if yellow > 2:
