@@ -4,8 +4,44 @@ yellow = 0
 hunger = 0
 health = 100
 day = 1
-monstercare = 0
+monstercare = 100
 # purple is enasni, green is lamron, yellow is bmud
+def day6if3():
+    global purple
+    global green
+    global yellow
+    global hunger
+    global health
+    global day
+    global monstercare
+    print("You wake up the next day. You slept a lot better. You realise your only roommates ate your earlier roommate and realise how bad all this looks.")
+def day6if0():
+    global purple
+    global green
+    global yellow
+    global hunger
+    global health
+    global day
+    global monstercare
+    print("The monsters are still trying to kill you.")
+def day6if1():
+    global purple
+    global green
+    global yellow
+    global hunger
+    global health
+    global day
+    global monstercare
+    print("The monsters see you but don't really care.")
+def day6if2():
+    global purple
+    global green
+    global yellow
+    global hunger
+    global health
+    global day
+    global monstercare
+    print("The monsters are obsessed!")
 def day5():
     global purple
     global green
@@ -23,10 +59,32 @@ def day5():
         print("The monsters want you gone or dead.")
     elif monstercare == 2:
         print("The monsters want you here forever. You're too important to let out! You are funny, cool, and their bestie! The outside is too dangerous.")
-    elif monstercare == 3 or (green > 3 and purple < 7):
-        print("'You should go... We want you to feel good.' The monsters look genuinely concerned. It's the first time they spoke like a human. I think they're trying to be as human as they can for you.")
-    elif monstercare == 4 or purple > 7:
+    elif monstercare == 3 or (green > 4 and purple < 7):
+        print("'You should go... We want you to feel good.' The monsters look genuinely concerned. It's the first time they spoke like a human. I think they're trying to be as human as they can for you. Do you leave?")
+        staygo3 = input("{stay}\t{go}\n")
+        if staygo3 == "stay":
+            print("Not an option. You get forced out of the paralell universe into your house and you realise your fridge is empty again.")
+            print("You noticed the apples you buy often go missing. It's weird. Anyway, you just T-Pose the whole day since i have no idea for this line.")
+            day6if3()
+    elif monstercare == 4 or purple > 7 and yellow < 6:
         print("Your friends care. They will let you go, but won't force you to do anything. You're one of them.")
+    elif yellow >= 6:
+        print("The monsters are a little concerned because of all the questionable choices you made. They're wondering if you should be sent to get supervision.\nThe monsters speak to you like to a kid. They are getting more and more worried, since you tried to drink gasoline you found lying around. They try to calm you down.")
+        ihnifana1 = input("{GRR}\t{im not that dumb}\t{SQUIRREL}\n")
+        # i have no idea for a name anymore. ihnifana1 is staying
+        if ihnifana1 == "GRR":
+            yellow += 3
+            print("YoU snArLeD aT thEm! They decide it's best to send you back to grandma. She welcomed you and had to restrain you in the basement, but still fed you cookies and tea.")
+        elif ihnifana1 == "im not that dumb":
+            green += 1
+            print("'th@at 1Iis a R3elief.' The monsters calmed down a little, but were still a bit worried about you. And scared of you...")
+        elif ihnifana1 == "SQUIRREL":
+            print("the hell you want from me? im not gonna rap if thats what you want. what do you want from the dev? can a person even be ginger without comments like- ah you're here for the rabies.\nok. i uh may have been carried away. heres your rabid ending i guess\nENDING: RABIES")
+        else:
+            print("when you pick a route just stay on it geez. maybe you did an idiot speedrun huh")
+    else:
+        print("CONGRATULATIONS! YOU GOT THE IMPOSSIBLE BUG ROUTE! for getting here i will reward you with a q&a. oops you clipped into the backrooms bye ending seeker. also youre here because you made the most plain character ever\n3ND1NG: B@CKR00MS")
+        exit()
 def day4():
     global purple
     global green
@@ -49,7 +107,6 @@ def day4():
                     print("You got stuck in it. You managed to get out, but it took the whole day.")
                     yellow += 2
                     day += 1
-                    monstercare = 0
                 elif touch1 == "no":
                     print("Probably a good idea... You sit there. Just... sit. You dont get food and eventually dont wanna do anything. You become the next meal.\nENDING: EATEN c")
                     exit()
@@ -70,6 +127,7 @@ def day4():
                 exit()
             elif runstay1 == "Stay":
                 print("You fall asleep. You don't wake up, consumed by the black ooze.\nENDING: HYBERNATING b")
+                exit()
         elif choice6 == "COME AT THEM":
             yellow += 2
             print("You do a wimpy slap. The monsters look shocked and laugh. They decide you're funny.\nThey like you. So they won't let you leave...")
@@ -87,7 +145,7 @@ def day4():
             choice8 = input("{Be upset}\t{Understand}\n")
             if choice8 == "Be upset":
                 purple += 10
-                print("YES! HOW CAN THEY?! YOU FED THEM FOR MONTHS, YOU CARED! AND THEY?! YOU DECIDE THIS DEMANDS BLOOD. THEY LEFT YOU. YOU WILL GET REVENGE. YOU GATHER WEAPONS, KILL TO GET THEM, AND FINALLY GET TO YOUR HOUSE. YOU SHOOT THE GUNS. YOU BREAK EVERYTHING.\nBut... they caught you. They push you to the ground and take your hard earned toys. They tell you to calm down.\nYOU DON'T. YOU CAN'T. YOU STRUGGLE AGAINST THEIR GRIP. FINALLY, THE POLICE COME. YOU SCREAM YOUR HEART OUT. THE POLICE INVESTIGATE YOU AND TAKE YOU AWAY. EVERYTHING AFTER THAT IS LIKE... a fever dream. You don't know whats right or wrong, who cares?\nYou take evry opportunity to go crazy. They close you in an asylum.")
+                print("YES! HOW CAN THEY?! YOU FED THEM FOR MONTHS, YOU CARED! AND THEY?! YOU DECIDE THIS DEMANDS BLOOD. THEY LEFT YOU. YOU WILL GET REVENGE. YOU GATHER WEAPONS, KILL TO GET THEM, AND FINALLY GET TO YOUR HOUSE. YOU SHOOT THE GUNS. YOU BREAK EVERYTHING.\nBut... they caught you. They push you to the ground and take your hard earned toys. They tell you to calm down.\nYOU DON'T. YOU CAN'T. YOU STRUGGLE AGAINST THEIR GRIP. FINALLY, THE POLICE COME. YOU SCREAM YOUR HEART OUT. THE POLICE INVESTIGATE YOU AND TAKE YOU AWAY. EVERYTHING AFTER THAT IS LIKE... a fever dream. You don't know whats right or wrong, who cares?\nYou take every opportunity to go crazy. They close you in an asylum.")
                 print("One day, you start spiraling. What did you do... You broke everything, no wonder they hate you. ENDING: very dark turn that i need to mark in the trigger warnings")
                 exit()
             elif choice8 == "Understand":
@@ -101,14 +159,14 @@ def day4():
                 elif choice9 == "friends?":
                     print("They are the ones that helped you. You go over to your house, and say what you feel. They show you something. They started eating apples! That's partly the reason your groceries went missing a lot, but they were working to become more human. You realise how ironic this is - You became a monster, they became a human. You decide to meet halfway.")
                     monstercare = 4
-                    #Idunno howto continue
                     print("They encourage you to go to a human therapist. But... You don't want to yet.")
+                    day += 1
     else:
         print("How the hell did you get here... The monsters are neutral with you. They let you go or stay.")
         staygo1 = input("{Stay}\t{Go}\n")
         if staygo1 == "Stay":
             print("You decided staying with the monsters is cool. You live like them, with them, and slowly start feeling as one of them.\n")
-            if green > 4 and yellow < 6:
+            if green > 3 and yellow < 6:
                 print("You feel weird about it. You fall into anxiety, jumping at every whisper. You don't feel good about this.")
                 print("You tell that to the monster therapist and they say you can go away if you feel so bad. They won't chase you.")
                 print("They treat you as their equal. That means you deserve freedom.")
@@ -118,7 +176,7 @@ def day4():
                     day += 1
                     monstercare = 3
             else:
-                print("You like living like this. You feel at home. You slowly see your body becoming like the monsters'. It's good. After months, you are officialy one of them! You realise your family isn't as bad as humanity says.\nThey don't kill to kill. That's their way to eat. Being scary, psychotic... That's a habit around humans. Humans are actually worse than them. Not from your perspective.\nYour family isn't toxic. They tolerate every gender, every hobby, don't have the internet.\nENDING: ONE OF THEM (sane)")
+                print("You like living like this. You feel at home. You slowly see your body becoming like the monsters'. It's good. After months, you are officialy one of them! You realise your family isn't as bad as humanity says.\nThey don't kill to kill. That's their way to eat. Being scary, psychotic... That's a habit around humans. Humans are actually worse than them. Not just from your perspective.\nYour family isn't toxic. They tolerate every gender, every hobby, don't have the internet.\nENDING: ONE OF THEM (sane)")
                 exit()
 
 def day3():
@@ -129,7 +187,7 @@ def day3():
     global health
     global day
     global monstercare
-    print("You had a dream today. You don't remember it though.\nYour room stinks of blood. You decide to check...")
+    print("You had a dream today. You don't remember it though.\nYour room stinks of a dead body. You decide to check...")
     choice4 = input("{the wardrobe}\t{under the bed}\t{HELL NAH}\n")
     if choice4 == "the wardrobe":
         print("You opened the wardrobe and an anime girl knocked you out. You didn't wake up.")
@@ -241,6 +299,8 @@ def day2():
         if stealing1 == "cat":
             print("You stole a cat's food bowl. It striked you with lightning. Never mess with cats.")
             print("ENDING: CAT STRIKED")
+            #you dare to mess with God?
+            yellow += 100000000000000000000000000000000000000000
             exit()
         elif stealing1 == "neighbour":
             print("The neighbour caught you. You went to prison.")
@@ -264,10 +324,10 @@ def start():
     global hunger
     global health
     global day
-    print("You wake up to the smell of the trash next to your bed. You didn't clean your room since 1885.")
+    print("You wake up to the smell of the trash next to your bed. You haven't cleaned your room since 1885.")
     print("As per usual, you ignore this to go downstairs and check your fridge for food.")
     print("Inside, you find a note from your mom that's been sitting there for 2 years. It's a block of ice.")
-    print("The only other thing you have there is ice cream that was freezed and unfreezed 14 times already.")
+    print("The only other thing you have there is ice cream that was frozen and unfrozen 14 times already.")
     print("You decide to eat...")
     choice = input("{the ice cream}\t{the note}\t{none}\n")
     if choice == "the ice cream":
@@ -304,25 +364,21 @@ def start():
         day += 1
         purple += 4
         hunger -= 1
+    elif choice == "qwertyuiop":
+        print("congrats a skip. you ate your keyboard and the shift button fell off thats why im typing in lowercase. h3v n0vv j can7 sL3ak! 0kav jm g3771ng vs3d 2 7h1s. 1dj07!\n3NDJNG: C0M3 0N! DVMBASS")
+        day = 5
+        exit()
     else:
         print("either youre trolling or stupid")
         exit()
 
 start()
-while True:
-    if day == 2:
-        day2()
-        break
-while True:
-    if day == 3:
-        day3()
-        break
-while True:
-    if day == 4:
-        day4()
-        break
-while True:
-    if day == 5:
-        day5()
-        break
-#
+if day == 2:
+    day2()
+if day == 3:
+    day3()
+if day == 4:
+    day4()
+if day == 5:
+    day5()
+#this is illegal. i mean you.
